@@ -1,4 +1,3 @@
-// src/App.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
@@ -53,7 +52,7 @@ function App() {
       const response = await axios.post('http://localhost:5000/classify_emotion', {
         photo: photoData,
       });
-      // Assuming the Flask backend sends back the emotion classification result
+      // Display the classified emotion in an alert
       alert(`Emotion: ${response.data.emotion}`);
     } catch (error) {
       console.error('Error sending photo to backend:', error);
@@ -62,7 +61,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Take photo</h1>
+      <h1>Nonverb</h1>
       {hasCamera ? (
         <div>
           <video id="video" width="320" height="240" autoPlay></video>
